@@ -39,7 +39,7 @@ bot.dialog('/', function (session) {
     //console.log(session.message.attachments[0].contentUrl,'contentUrl');
     if (session.message.attachments.length > 0) {
         
-        api('https://southcentralus.api.cognitive.microsoft.com/customvision/v1.1/Prediction/1f32e321-220b-4dca-a709-5be05765d185/url?iterationId=1baed895-25d7-481a-98be-592003db82f1',
+        api('https://southcentralus.api.cognitive.microsoft.com/customvision/v1.1/Prediction/1f32e321-220b-4dca-a709-5be05765d185/url',
         session.message.attachments[0].contentUrl).then((output) => {
             
             if(Math.floor(output.Predictions[0].Probability*100)==0){
