@@ -39,8 +39,7 @@ bot.dialog('/', function (session) {
     //console.log(session.message.attachments[0].contentUrl,'contentUrl');
     if (session.message.attachments.length > 0) {
         
-        api('https://southcentralus.api.cognitive.microsoft.com/customvision/v1.1/Prediction/' +
-                '1ad8ba80-bd73-4e09-b185-260423589f69/url',
+        api('https://southcentralus.api.cognitive.microsoft.com/customvision/v1.1/Prediction/1f32e321-220b-4dca-a709-5be05765d185/url?iterationId=1baed895-25d7-481a-98be-592003db82f1',
         session.message.attachments[0].contentUrl).then((output) => {
             
             if(Math.floor(output.Predictions[0].Probability*100)==0){
@@ -68,7 +67,7 @@ function api(url, picUrl) {
         method: 'post',
 
         headers: {
-            'Prediction-Key': '9ba907306c8740cea52aabd508df5c94',
+            'Prediction-Key': 'c04f847425b445f2bedc3b2a36dac65f',
             'content-type': 'application/json'
         },
             body: JSON.stringify({Url: picUrl})
